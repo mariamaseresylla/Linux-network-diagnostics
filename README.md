@@ -34,11 +34,26 @@ IPv6 link-local address: fe80::215:5dff:febc:c347/64
 Interface status: UP and LOWER_UP
 UP means that the network interface is enabled, while LOWER_UP means that the network link is operational.
 
-Display the routing table with ip route
+## Display the routing table with ip route
+## Observation
+the ip route command  displays  the linux routing of  table  , it helps  idenftify the  routes used to send network  packets, including the network interface and the default gateway
 
-Test network connectivity with ping
+in my environment:
+default via 172.26.64.1 dev eth0 proto kernel
+172.26.64.0/20 dev eth0 proto kernel scope link src 172.26.74.230
 
-Check DNS resolution with getent hosts
+## Test network connectivity with ping
+## Observation
+The ping -c 4 1.1.1.1 command is used to test network connectivity with a remote IP address. It sends 4 ICMP packets to the destination and checks whether replies are received. It also measures response time and detects packet loss.
+in my environment 
+Packets transmitted: 4
+Packets received: 4
+Packet loss: 0%
+Minimum response time: 34.704 ms
+Average response time: 121.555 ms
+Maximum response time: 310.381 ms
+
+## Check DNS resolution with getent hosts
 
 Document observations and results
 
